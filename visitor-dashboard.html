@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أَثَـر DZ | محفظتي وفضاء الزائر</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cinzel:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="visitor">
+
+  <!-- Unified National Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="index.html" class="brand-link">
+          <img src="assets/images/logo.jpg" alt="Athar DZ Logo" class="brand-logo" />
+          <div>
+            <div class="brand-name-row">
+              <span data-i18n="site_name">أَثَـر DZ</span>
+              <span class="brand-tag">Athar DZ • 69</span>
+            </div>
+            <div class="brand-sub" data-i18n="site_slogan">زُر معالمك.. اجمع نقاطك.. واقتنِ أصالتك</div>
+          </div>
+        </a>
+
+        <div class="header-actions">
+          <div class="wallet-badge">
+            <span data-i18n="wallet_label">رصيدك الثقافي:</span>
+            <strong id="header-points">0</strong>
+            <strong data-i18n="pts_unit">نقطة</strong>
+          </div>
+
+          <div class="lang-switcher" role="group" aria-label="Language Switcher">
+            <button type="button" class="lang-btn active" data-lang="ar" onclick="setLanguage('ar')">العربية</button>
+            <button type="button" class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">Français</button>
+            <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')">English</button>
+          </div>
+
+          <a href="login.html" class="auth-pill">
+            <span>👤</span>
+            <span id="header-auth-label" data-i18n="btn_login_portal">تسجيل الدخول / حساب جديد</span>
+          </a>
+          <button type="button" id="header-logout-btn" class="btn btn-glass btn-sm hidden" onclick="globalLogout()" data-i18n="btn_logout">تسجيل الخروج</button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <div class="container">
+        <div class="nav-links">
+          <a href="index.html" class="nav-item" data-nav="home" data-i18n="nav_home">الرئيسية</a>
+          <a href="about.html" class="nav-item" data-nav="about" data-i18n="nav_about">من نحن</a>
+          <a href="explore.html" class="nav-item" data-nav="explore" data-i18n="nav_explore">المعالم والفعاليات</a>
+          <a href="passport.html" class="nav-item" data-nav="passport" data-i18n="nav_passport">جواز السفر والألعاب</a>
+          <a href="marketplace.html" class="nav-item" data-nav="marketplace" data-i18n="nav_marketplace">المتجر الحرفي</a>
+          <a href="visitor-dashboard.html" class="nav-item hidden" data-nav="visitor" data-i18n="nav_visitor">محفظتي وفضاء الزائر</a>
+          <a href="artisan-dashboard.html" class="nav-item hidden" data-nav="artisan" data-i18n="nav_artisan">لوحة الحرفيين والمنظمين</a>
+          <a href="admin-dashboard.html" class="nav-item hidden" data-nav="admin" data-i18n="nav_admin">الإدارة الوطنية</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="page-banner">
+      <div>
+        <h1 style="font-size:1.55rem;font-weight:800;margin-bottom:6px;" data-i18n="visitor_banner_title">فضاء الزائر ومحفظتي الثقافية</h1>
+        <p style="font-size:0.9rem;color:#D1FAE5;" data-i18n="visitor_banner_desc">تابع رصيد نقاطك، تذاكرك الرقمية المحجوزة، وطلباتك وقسائم الهدايا الحرفية.</p>
+      </div>
+    </section>
+
+    <div class="grid-4" style="margin-bottom:26px;">
+      <div class="kpi-card gold">
+        <div class="kpi-lbl" data-i18n="kpi_my_points">رصيد نقاط أثر</div>
+        <div class="kpi-num" id="v-kpi-points">0</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl" data-i18n="kpi_my_stamps">الأختام المكتسبة</div>
+        <div class="kpi-num" id="v-kpi-stamps">0 / 6</div>
+      </div>
+      <div class="kpi-card terracotta">
+        <div class="kpi-lbl" data-i18n="kpi_my_tickets">الحجوزات والتذاكر</div>
+        <div class="kpi-num" id="v-kpi-tickets">0</div>
+      </div>
+      <div class="kpi-card gold">
+        <div class="kpi-lbl" data-i18n="kpi_my_gifts">الطلبات والهدايا</div>
+        <div class="kpi-num" id="v-kpi-gifts">0</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel">
+        <h2 class="panel-heading" data-i18n="panel_tickets_title">حجوزاتي وتذاكري الرقمية (QR E-Tickets)</h2>
+        <div id="v-tickets-list"></div>
+      </div>
+      <div class="panel">
+        <h2 class="panel-heading" data-i18n="panel_vouchers_title">طلباتي وقسائم الهدايا الحرفية</h2>
+        <div id="v-vouchers-list"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Unified Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong style="color:var(--gold);font-size:0.95rem;" data-i18n="site_name">أَثَـر DZ</strong>
+          <p style="margin-top:4px;" data-i18n="footer_desc">المنصة الوطنية الذكية للسياحة الثقافية، حجز الفعاليات، والصناعات الحرفية عبر 69 ولاية جزائرية.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+          <a href="about.html" data-i18n="nav_about">من نحن</a>
+          <a href="explore.html" data-i18n="nav_explore">المعالم والفعاليات</a>
+          <a href="passport.html" data-i18n="nav_passport">جواز السفر والألعاب</a>
+          <a href="marketplace.html" data-i18n="nav_marketplace">المتجر الحرفي</a>
+          <a href="login.html" data-i18n="btn_login_portal">تسجيل الدخول / حساب جديد</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global Interactive Modal -->
+  <div class="modal-overlay" id="global-modal" onclick="closeGlobalModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <span class="brand-tag" id="g-modal-badge">Athar DZ</span>
+      <h3 style="margin-top:10px;font-size:1.15rem;color:var(--charcoal);" id="g-modal-title"></h3>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:4px;" id="g-modal-sub"></p>
+      <div class="qr-box hidden" id="g-modal-qr"></div>
+      <div id="g-modal-extra"></div>
+      <button type="button" class="btn btn-emerald" style="width:100%;margin-top:16px;" onclick="closeGlobalModal()" data-i18n="modal_close">إغلاق</button>
+    </div>
+  </div>
+
+  <!-- Global Toast -->
+  <div class="toast-msg" id="global-toast"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  <script>
+    function cancelBooking(bookingId) {
+      atharState.bookings = atharState.bookings.filter(b => b.bookingId !== bookingId);
+      saveAtharState(atharState);
+      applyTranslations();
+      showToast("toast_booking_cancelled");
+    }
+
+    window.renderPageContent = function() {
+      const visited = atharState.sites.filter(s => s.visited);
+      const bookings = atharState.bookings || [];
+      const orders = atharState.orders || [];
+
+      document.getElementById("v-kpi-points").textContent = `${atharState.points} ${t("pts_unit")}`;
+      document.getElementById("v-kpi-stamps").textContent = `${visited.length} / ${atharState.sites.length}`;
+      document.getElementById("v-kpi-tickets").textContent = bookings.length;
+      document.getElementById("v-kpi-gifts").textContent = orders.length;
+
+      document.getElementById("v-tickets-list").innerHTML = bookings.length
+        ? bookings.map(bk => {
+            const site = atharState.sites.find(s => s.id === bk.siteId);
+            const title = site ? loc(site.title) : bk.siteId;
+            return `
+              <div style="padding:13px;border:1px solid var(--border);border-radius:13px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;">
+                <div>
+                  <strong style="font-size:0.9rem;">${title}</strong>
+                  <div style="font-size:0.76rem;color:var(--muted);">${bk.bookingId} • ${bk.visitDate} (${bk.quantity}x) • ${bk.totalDzd} ${t("currency_dzd")}</div>
+                </div>
+                <div class="btn-row">
+                  <button type="button" class="btn btn-emerald btn-sm" onclick="showBookingTicket('${bk.bookingId}')">QR</button>
+                  <button type="button" class="btn btn-terracotta btn-sm" onclick="cancelBooking('${bk.bookingId}')">${t("btn_cancel_booking")}</button>
+                </div>
+              </div>
+            `;
+          }).join("")
+        : `<p style="font-size:0.84rem;color:var(--muted);">${t("empty_tickets")}</p>`;
+
+      document.getElementById("v-vouchers-list").innerHTML = orders.length
+        ? orders.map(ord => {
+            const prod = atharState.products.find(p => p.id === ord.prodId);
+            const pName = prod ? loc(prod.name) : ord.prodId;
+            return `
+              <div style="padding:13px;border:1.5px solid var(--gold);background:var(--gold-light);border-radius:13px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;">
+                <div>
+                  <strong style="font-size:0.9rem;">${pName}</strong>
+                  <div style="font-size:0.76rem;color:var(--terracotta);font-family:monospace;">${ord.orderId} • ${ord.amountText}</div>
+                </div>
+                <button type="button" class="btn btn-outline btn-sm" onclick="handleOpenCertificate('${ord.prodId}')">QR</button>
+              </div>
+            `;
+          }).join("")
+        : `<p style="font-size:0.84rem;color:var(--muted);">${t("empty_vouchers")}</p>`;
+    };
+  </script>
+
+</body>
+</html>

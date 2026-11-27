@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أَثَـر DZ | لوحة الحرفيين والمنظمين</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cinzel:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="artisan">
+
+  <!-- Unified National Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="index.html" class="brand-link">
+          <img src="assets/images/logo.jpg" alt="Athar DZ Logo" class="brand-logo" />
+          <div>
+            <div class="brand-name-row">
+              <span data-i18n="site_name">أَثَـر DZ</span>
+              <span class="brand-tag">Athar DZ • 69</span>
+            </div>
+            <div class="brand-sub" data-i18n="site_slogan">زُر معالمك.. اجمع نقاطك.. واقتنِ أصالتك</div>
+          </div>
+        </a>
+
+        <div class="header-actions">
+          <div class="wallet-badge">
+            <span data-i18n="wallet_label">رصيدك الثقافي:</span>
+            <strong id="header-points">0</strong>
+            <strong data-i18n="pts_unit">نقطة</strong>
+          </div>
+
+          <div class="lang-switcher" role="group" aria-label="Language Switcher">
+            <button type="button" class="lang-btn active" data-lang="ar" onclick="setLanguage('ar')">العربية</button>
+            <button type="button" class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">Français</button>
+            <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')">English</button>
+          </div>
+
+          <a href="login.html" class="auth-pill">
+            <span>👤</span>
+            <span id="header-auth-label" data-i18n="btn_login_portal">تسجيل الدخول / حساب جديد</span>
+          </a>
+          <button type="button" id="header-logout-btn" class="btn btn-glass btn-sm hidden" onclick="globalLogout()" data-i18n="btn_logout">تسجيل الخروج</button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <div class="container">
+        <div class="nav-links">
+          <a href="index.html" class="nav-item" data-nav="home" data-i18n="nav_home">الرئيسية</a>
+          <a href="about.html" class="nav-item" data-nav="about" data-i18n="nav_about">من نحن</a>
+          <a href="explore.html" class="nav-item" data-nav="explore" data-i18n="nav_explore">المعالم والفعاليات</a>
+          <a href="passport.html" class="nav-item" data-nav="passport" data-i18n="nav_passport">جواز السفر والألعاب</a>
+          <a href="marketplace.html" class="nav-item" data-nav="marketplace" data-i18n="nav_marketplace">المتجر الحرفي</a>
+          <a href="visitor-dashboard.html" class="nav-item hidden" data-nav="visitor" data-i18n="nav_visitor">محفظتي وفضاء الزائر</a>
+          <a href="artisan-dashboard.html" class="nav-item hidden" data-nav="artisan" data-i18n="nav_artisan">لوحة الحرفيين والمنظمين</a>
+          <a href="admin-dashboard.html" class="nav-item hidden" data-nav="admin" data-i18n="nav_admin">الإدارة الوطنية</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="page-banner terracotta-banner">
+      <div>
+        <h1 style="font-size:1.55rem;font-weight:800;margin-bottom:6px;" data-i18n="artisan_banner_title">لوحة تحكم الحرفيين ومنظمي الفعاليات (B2B SaaS)</h1>
+        <p style="font-size:0.9rem;color:#FEE2E2;" data-i18n="artisan_banner_desc">أدر مبيعاتك وحجوزاتك، أضف منتجات حرفية جديدة بشهادة أصالة QR، وانشر فعالياتك الثقافية عبر 69 ولاية.</p>
+      </div>
+    </section>
+
+    <div class="grid-4" style="margin-bottom:26px;">
+      <div class="kpi-card">
+        <div class="kpi-lbl" data-i18n="kpi_art_sales">إجمالي المداخيل المحققة</div>
+        <div class="kpi-num" id="art-kpi-sales">0 DZD</div>
+      </div>
+      <div class="kpi-card gold">
+        <div class="kpi-lbl" data-i18n="kpi_art_certs">شهادات الأصالة المصدرة</div>
+        <div class="kpi-num" id="art-kpi-certs">0</div>
+      </div>
+      <div class="kpi-card terracotta">
+        <div class="kpi-lbl" data-i18n="kpi_art_bookings">حجوزات التذاكر المسجلة</div>
+        <div class="kpi-num" id="art-kpi-bookings">0</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl" data-i18n="kpi_art_plan">باقة الاشتراك المهني</div>
+        <div class="kpi-num" style="font-size:1.15rem;color:var(--emerald);" data-i18n="plan_pro_val">باقة برو (Pro SaaS)</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel">
+        <h2 class="panel-heading" data-i18n="panel_add_craft">+ نشر منتج حرفي جديد وإصدار شهادة أصالة QR</h2>
+        <form onsubmit="publishNewCraft(event)">
+          <div class="form-field">
+            <label data-i18n="lbl_craft_name">اسم المنتج الحرفي</label>
+            <input type="text" id="c-name" class="input-control" required data-i18n-placeholder="ph_craft_name" placeholder="مثال: طقم نحاس قسنطيني منقوش" />
+          </div>
+          <div class="form-field">
+            <label data-i18n="lbl_craft_workshop">اسم الورشة أو الحرفي</label>
+            <input type="text" id="c-workshop" class="input-control" required data-i18n-placeholder="ph_craft_workshop" placeholder="مثال: ورشة الجسور المعلقة" />
+          </div>
+          <div class="form-field">
+            <label data-i18n="lbl_craft_wilaya">الولاية (69 ولاية)</label>
+            <select id="c-wilaya" class="select-control" data-wilaya-select="true"></select>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div class="form-field">
+              <label data-i18n="lbl_craft_price">السعر (دج)</label>
+              <input type="number" id="c-price" class="input-control" required value="4800" />
+            </div>
+            <div class="form-field">
+              <label data-i18n="lbl_craft_pts">قيمة الاستبدال بالنقاط</label>
+              <input type="number" id="c-pts" class="input-control" required value="350" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label data-i18n="lbl_select_photo">اختر صورة العرض المناسبة</label>
+            <select id="c-image" class="select-control" style="width:100%;">
+              <option value="assets/images/artisan-workshop.jpg" data-i18n="photo_opt_workshop">ورشة حرفية تقليدية</option>
+              <option value="assets/images/brass-constantine.jpg" data-i18n="photo_opt_brass">نحاس قسنطيني منقوش</option>
+              <option value="assets/images/babar-carpet.jpg" data-i18n="photo_opt_carpet">زربية أوراسية منسوجة</option>
+              <option value="assets/images/pottery.jpg" data-i18n="photo_opt_pottery">فخار تقليدي مزخرف</option>
+              <option value="assets/images/jewelry.jpg" data-i18n="photo_opt_jewelry">حلي فضي تقليدي</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-emerald" style="width:100%;" data-i18n="btn_publish_craft">نشر المنتج وإصدار شهادة QR</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2 class="panel-heading" data-i18n="panel_add_event">+ إضافة معلم أو فعالية ثقافية جديدة للحجز</h2>
+        <form onsubmit="publishNewEvent(event)">
+          <div class="form-field">
+            <label data-i18n="lbl_event_title">عنوان الفعالية أو المعلم</label>
+            <input type="text" id="e-title" class="input-control" required data-i18n-placeholder="ph_event_title" placeholder="مثال: جولة في قلعة بني حماد" />
+          </div>
+          <div class="form-field">
+            <label data-i18n="lbl_event_wilaya">الولاية (69 ولاية)</label>
+            <select id="e-wilaya" class="select-control" data-wilaya-select="true"></select>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div class="form-field">
+              <label data-i18n="lbl_event_price">سعر التذكرة (دج)</label>
+              <input type="number" id="e-price" class="input-control" required value="500" />
+            </div>
+            <div class="form-field">
+              <label data-i18n="lbl_event_reward">نقاط المكافأة للزائر</label>
+              <input type="number" id="e-reward" class="input-control" required value="180" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label data-i18n="lbl_select_photo">اختر صورة العرض المناسبة</label>
+            <select id="e-image" class="select-control" style="width:100%;">
+              <option value="assets/images/mechouar.jpg" data-i18n="photo_opt_heritage">معلم أثري وقصر تاريخي</option>
+              <option value="assets/images/andalusian-music.jpg" data-i18n="photo_opt_theater">عرض مسرحي وموسيقى أندلسية</option>
+              <option value="assets/images/constantine-bridge.jpg" data-i18n="photo_opt_heritage">جسر ومعلم تاريخي</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-terracotta" style="width:100%;margin-top:74px;" data-i18n="btn_publish_event">نشر الفعالية في المنصة</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 class="panel-heading" data-i18n="panel_craft_inventory">سجل المنتجات الحرفية وشهادات الأصالة النشطة</h2>
+      <div class="table-wrap">
+        <table class="clean-table">
+          <thead>
+            <tr>
+              <th data-i18n="th_cert_id">رمز الشهادة QR</th>
+              <th data-i18n="th_item_name">المنتج / القطعة</th>
+              <th data-i18n="th_wilaya">الولاية</th>
+              <th data-i18n="th_price">السعر / النقاط</th>
+              <th data-i18n="th_status">الحالة</th>
+            </tr>
+          </thead>
+          <tbody id="artisan-inventory-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="panel">
+      <h2 class="panel-heading" data-i18n="panel_recent_bookings">سجل حجوزات التذاكر والطلبات الواردة</h2>
+      <div id="artisan-bookings-ledger"></div>
+    </div>
+  </main>
+
+  <!-- Unified Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong style="color:var(--gold);font-size:0.95rem;" data-i18n="site_name">أَثَـر DZ</strong>
+          <p style="margin-top:4px;" data-i18n="footer_desc">المنصة الوطنية الذكية للسياحة الثقافية، حجز الفعاليات، والصناعات الحرفية عبر 69 ولاية جزائرية.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+          <a href="about.html" data-i18n="nav_about">من نحن</a>
+          <a href="explore.html" data-i18n="nav_explore">المعالم والفعاليات</a>
+          <a href="passport.html" data-i18n="nav_passport">جواز السفر والألعاب</a>
+          <a href="marketplace.html" data-i18n="nav_marketplace">المتجر الحرفي</a>
+          <a href="login.html" data-i18n="btn_login_portal">تسجيل الدخول / حساب جديد</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global Interactive Modal -->
+  <div class="modal-overlay" id="global-modal" onclick="closeGlobalModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <span class="brand-tag" id="g-modal-badge">Athar DZ</span>
+      <h3 style="margin-top:10px;font-size:1.15rem;color:var(--charcoal);" id="g-modal-title"></h3>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:4px;" id="g-modal-sub"></p>
+      <div class="qr-box hidden" id="g-modal-qr"></div>
+      <div id="g-modal-extra"></div>
+      <button type="button" class="btn btn-emerald" style="width:100%;margin-top:16px;" onclick="closeGlobalModal()" data-i18n="modal_close">إغلاق</button>
+    </div>
+  </div>
+
+  <!-- Global Toast -->
+  <div class="toast-msg" id="global-toast"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  <script>
+    function publishNewCraft(e) {
+      e.preventDefault();
+      const name = document.getElementById("c-name").value.trim();
+      const workshop = document.getElementById("c-workshop").value.trim();
+      const wCode = document.getElementById("c-wilaya").value;
+      const price = parseInt(document.getElementById("c-price").value, 10) || 4500;
+      const pts = parseInt(document.getElementById("c-pts").value, 10) || 350;
+
+      const certId = "CERT-DZ-" + Math.floor(1000 + Math.random() * 9000);
+      atharState.products.unshift({
+        id: certId,
+        wilayaCode: wCode,
+        image: document.getElementById("c-image")?.value || "assets/images/artisan-workshop.jpg",
+        wilaya: { ar: getWilayaNameByCode(wCode, "ar"), fr: getWilayaNameByCode(wCode, "fr"), en: getWilayaNameByCode(wCode, "en") },
+        artisan: { ar: workshop, fr: workshop, en: workshop },
+        name: { ar: name, fr: name, en: name },
+        desc: {
+          ar: "إبداع حرفي جزائري أصيل مرفق بشهادة توثيق رقمية QR.",
+          fr: "Création artisanale algérienne authentique avec certificat QR.",
+          en: "Authentic Algerian handcrafted creation with QR digital certificate."
+        },
+        material: {
+          ar: "مواد طبيعية وصناعة يدوية 100%",
+          fr: "Matériaux naturels et fait main 100%",
+          en: "100% natural materials and handmade craft"
+        },
+        price: price,
+        pointsCost: pts
+      });
+
+      saveAtharState(atharState);
+      e.target.reset();
+      applyTranslations();
+      showToast("toast_craft_added");
+      handleOpenCertificate(certId);
+    }
+
+    function publishNewEvent(e) {
+      e.preventDefault();
+      const title = document.getElementById("e-title").value.trim();
+      const wCode = document.getElementById("e-wilaya").value;
+      const price = parseInt(document.getElementById("e-price").value, 10) || 500;
+      const reward = parseInt(document.getElementById("e-reward").value, 10) || 160;
+
+      const siteId = "DZ-EVT-" + Math.floor(100 + Math.random() * 899);
+      atharState.sites.unshift({
+        id: siteId,
+        wilayaCode: wCode,
+        cat: "heritage",
+        image: document.getElementById("e-image")?.value || "assets/images/mechouar.jpg",
+        wilaya: { ar: getWilayaNameByCode(wCode, "ar"), fr: getWilayaNameByCode(wCode, "fr"), en: getWilayaNameByCode(wCode, "en") },
+        catLabel: { ar: "معلم وفعالية", fr: "Site & Événement", en: "Landmark & Event" },
+        title: { ar: title, fr: title, en: title },
+        desc: {
+          ar: "تجربة ثقافية مضافة عبر بوابة المنظمين مع تذكرة QR ونقاط مكافآت.",
+          fr: "Expérience culturelle publiée via le portail organisateur avec e-billet QR.",
+          en: "Cultural experience published via organizer portal with QR ticket and reward points."
+        },
+        schedule: { ar: "يومياً • 10:00 صباحاً - 17:00 مساءً", fr: "Tous les jours • 10h00 - 17h00", en: "Daily • 10:00 AM - 05:00 PM" },
+        price: price,
+        reward: reward,
+        visited: false,
+        quiz: {
+          question: {
+            ar: "كم يبلغ عدد ولايات الجزائر المغطاة في منصة أَثَـر DZ؟",
+            fr: "Combien de wilayas algériennes sont couvertes par Athar DZ ?",
+            en: "How many Algerian wilayas are covered by Athar DZ?"
+          },
+          options: {
+            ar: ["69 ولاية", "48 ولاية", "30 ولاية"],
+            fr: ["69 wilayas", "48 wilayas", "30 wilayas"],
+            en: ["69 wilayas", "48 wilayas", "30 wilayas"]
+          },
+          answerIdx: 0
+        }
+      });
+
+      saveAtharState(atharState);
+      e.target.reset();
+      applyTranslations();
+      showToast("toast_event_added");
+    }
+
+    window.renderPageContent = function() {
+      const bookingsSum = (atharState.bookings || []).reduce((acc, b) => acc + (b.totalDzd || 0), 0);
+      const ordersSum = (atharState.orders || []).filter(o => o.type === "direct").reduce((acc, o) => acc + (o.priceDzd || 0), 0);
+      const totalRevenue = bookingsSum + ordersSum;
+      document.getElementById("art-kpi-sales").textContent = `${totalRevenue.toLocaleString()} ${t("currency_dzd")}`;
+      document.getElementById("art-kpi-certs").textContent = atharState.products.length;
+      document.getElementById("art-kpi-bookings").textContent = (atharState.bookings || []).length;
+
+      document.getElementById("artisan-inventory-body").innerHTML = atharState.products.map(p => `
+        <tr>
+          <td style="font-family:monospace;font-weight:800;color:var(--emerald);">
+            <button type="button" class="btn btn-outline btn-sm" onclick="handleOpenCertificate('${p.id}')">${p.id}</button>
+          </td>
+          <td><strong>${loc(p.name)}</strong><div style="font-size:0.75rem;color:var(--muted);">${loc(p.artisan)}</div></td>
+          <td>${getWilayaNameByCode(p.wilayaCode, atharState.lang)}</td>
+          <td>${p.price} ${t("currency_dzd")} / <strong style="color:var(--terracotta);">${p.pointsCost} ${t("pts_unit")}</strong></td>
+          <td><span class="brand-tag">${t("status_certified")}</span></td>
+        </tr>
+      `).join("");
+
+      const ledgerEl = document.getElementById("artisan-bookings-ledger");
+      const allBks = atharState.bookings || [];
+      const allOrds = atharState.orders || [];
+      if (allBks.length === 0 && allOrds.length === 0) {
+        ledgerEl.innerHTML = `<p style="font-size:0.84rem;color:var(--muted);">${t("empty_b2b_bookings")}</p>`;
+      } else {
+        const bkRows = allBks.map(b => `
+          <div style="padding:10px 12px;border:1px solid var(--border);border-radius:11px;margin-bottom:8px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:0.83rem;">
+            <span><strong>${b.bookingId}</strong> — ${b.visitorName} (${b.visitDate} • ${b.quantity}x)</span>
+            <strong style="color:var(--emerald);">${b.totalDzd} ${t("currency_dzd")}</strong>
+          </div>
+        `).join("");
+        const ordRows = allOrds.map(o => `
+          <div style="padding:10px 12px;border:1px solid var(--gold);background:var(--gold-light);border-radius:11px;margin-bottom:8px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:0.83rem;">
+            <span><strong>${o.orderId}</strong> — ${o.buyerName} (${o.prodId})</span>
+            <strong style="color:var(--terracotta);">${o.amountText}</strong>
+          </div>
+        `).join("");
+        ledgerEl.innerHTML = bkRows + ordRows;
+      }
+    };
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أَثَـر DZ | من نحن</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cinzel:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="about">
+
+  <!-- Unified National Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="index.html" class="brand-link">
+          <img src="assets/images/logo.jpg" alt="Athar DZ Logo" class="brand-logo" />
+          <div>
+            <div class="brand-name-row">
+              <span data-i18n="site_name">أَثَـر DZ</span>
+              <span class="brand-tag">Athar DZ • 69</span>
+            </div>
+            <div class="brand-sub" data-i18n="site_slogan">زُر معالمك.. اجمع نقاطك.. واقتنِ أصالتك</div>
+          </div>
+        </a>
+
+        <div class="header-actions">
+          <div class="wallet-badge">
+            <span data-i18n="wallet_label">رصيدك الثقافي:</span>
+            <strong id="header-points">0</strong>
+            <strong data-i18n="pts_unit">نقطة</strong>
+          </div>
+
+          <div class="lang-switcher" role="group" aria-label="Language Switcher">
+            <button type="button" class="lang-btn active" data-lang="ar" onclick="setLanguage('ar')">العربية</button>
+            <button type="button" class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">Français</button>
+            <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')">English</button>
+          </div>
+
+          <a href="login.html" class="auth-pill">
+            <span>👤</span>
+            <span id="header-auth-label" data-i18n="btn_login_portal">تسجيل الدخول / حساب جديد</span>
+          </a>
+          <button type="button" id="header-logout-btn" class="btn btn-glass btn-sm hidden" onclick="globalLogout()" data-i18n="btn_logout">تسجيل الخروج</button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <div class="container">
+        <div class="nav-links">
+          <a href="index.html" class="nav-item" data-nav="home" data-i18n="nav_home">الرئيسية</a>
+          <a href="about.html" class="nav-item" data-nav="about" data-i18n="nav_about">من نحن</a>
+          <a href="explore.html" class="nav-item" data-nav="explore" data-i18n="nav_explore">المعالم والفعاليات</a>
+          <a href="passport.html" class="nav-item" data-nav="passport" data-i18n="nav_passport">جواز السفر والألعاب</a>
+          <a href="marketplace.html" class="nav-item" data-nav="marketplace" data-i18n="nav_marketplace">المتجر الحرفي</a>
+          <a href="visitor-dashboard.html" class="nav-item hidden" data-nav="visitor" data-i18n="nav_visitor">محفظتي وفضاء الزائر</a>
+          <a href="artisan-dashboard.html" class="nav-item hidden" data-nav="artisan" data-i18n="nav_artisan">لوحة الحرفيين والمنظمين</a>
+          <a href="admin-dashboard.html" class="nav-item hidden" data-nav="admin" data-i18n="nav_admin">الإدارة الوطنية</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="page-banner">
+      <div>
+        <h1 style="font-size:1.6rem;font-weight:800;margin-bottom:6px;" data-i18n="about_banner_title">من نحن — منصة أَثَـر DZ (Athar DZ)</h1>
+        <p style="font-size:0.92rem;color:#D1FAE5;" data-i18n="about_banner_desc">منظومة رقمية جزائرية رائدة لرقمنة السياحة الثقافية، حجز الفعاليات، وتثمين الصناعات الحرفية عبر 69 ولاية.</p>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="about-split">
+        <div>
+          <h2 class="section-title" style="margin-bottom:10px;" data-i18n="about_mission_title">رسالتنا الوطنية</h2>
+          <p style="font-size:0.92rem;color:var(--slate);margin-bottom:20px;" data-i18n="about_mission_desc">تمكين كل مواطن وسائح من استكشاف التراث المادي واللامادي للجزائر بسهولة، وتحويل الإقبال الثقافي إلى مصدر دخل مباشر ومستدام للحرفيين والمبدعين والفضاءات الثقافية في جميع الولايات الـ 69.</p>
+
+          <h2 class="section-title" style="margin-bottom:10px;" data-i18n="about_vision_title">رؤيتنا المستقبلية</h2>
+          <p style="font-size:0.92rem;color:var(--slate);" data-i18n="about_vision_desc">بناء البنية التحتية الرقمية الأولى للصناعات الثقافية والإبداعية في الجزائر والمغرب العربي، وربط التراث الجزائري الأصيل بالأسواق الوطنية والدولية عبر التوثيق الرقمي الذكي.</p>
+        </div>
+        <div class="about-gallery">
+          <img src="assets/images/casbah.jpg" alt="Casbah" />
+          <img src="assets/images/pottery.jpg" alt="Pottery" />
+          <img src="assets/images/theater.jpg" alt="Theater" />
+          <img src="assets/images/andalusian-music.jpg" alt="Andalusian Heritage Music" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="grid-4">
+        <div class="step-card" style="border-top-color:var(--emerald);">
+          <h3 data-i18n="about_pillar1_t">تغطية شاملة لـ 69 ولاية</h3>
+          <p data-i18n="about_pillar1_d">ربط المعالم التاريخية، المتاحف، المسارح، والورشات الحرفية في كافة ولايات الوطن الـ 69 في منصة موحدة.</p>
+        </div>
+        <div class="step-card" style="border-top-color:var(--gold);">
+          <h3 data-i18n="about_pillar2_t">حماية الملكية الفكرية والأصالة</h3>
+          <p data-i18n="about_pillar2_d">تزويد كل منتج حرفي بشهادة أصالة رقمية (QR Code) توثق اسم الحرفي، الولاية، والمواد الأولية لمنع التقليد والانتحال.</p>
+        </div>
+        <div class="step-card" style="border-top-color:var(--terracotta);">
+          <h3 data-i18n="about_pillar3_t">نموذج اقتصادي هجين ومستدام</h3>
+          <p data-i18n="about_pillar3_d">عمولات شفافة على التذاكر والمبيعات (8%–15%)، اشتراكات SaaS للمهنيين، ورعاية سياحية لتمويل نظام المكافآت.</p>
+        </div>
+        <div class="step-card" style="border-top-color:var(--emerald);">
+          <h3 data-i18n="about_pillar4_t">تحفيز تفاعلي للأجيال الصاعدة</h3>
+          <p data-i18n="about_pillar4_d">دمج التلعيب (Gamification) وجواز السفر الثقافي الرقمي لتشجيع الشباب والعائلات على زيارة المتاحف والمعالم بانتظام.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="panel" style="max-width:720px;margin:0 auto;">
+        <h2 class="panel-heading" data-i18n="about_contact_title">تواصل مع فريق أَثَـر DZ أو اطلب شراكة مؤسساتية</h2>
+        <p style="font-size:0.84rem;color:var(--muted);margin-bottom:16px;" data-i18n="about_contact_sub">للمؤسسات الثقافية، المتاحف، الحرفيين، والجهات الراعية عبر 69 ولاية</p>
+        <form onsubmit="submitAboutContact(event)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div class="form-field">
+              <label data-i18n="lbl_contact_name">الاسم الكامل / الجهة</label>
+              <input type="text" id="cnt-name" class="input-control" required data-i18n-placeholder="ph_contact_name" placeholder="أدخل اسمك أو اسم المؤسسة" />
+            </div>
+            <div class="form-field">
+              <label data-i18n="lbl_contact_email">البريد الإلكتروني</label>
+              <input type="email" id="cnt-email" class="input-control" required data-i18n-placeholder="ph_contact_email" placeholder="contact@athar.dz" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label data-i18n="lbl_contact_wilaya">الولاية (من 01 إلى 69)</label>
+            <select id="cnt-wilaya" class="select-control" data-wilaya-select="true"></select>
+          </div>
+          <div class="form-field">
+            <label data-i18n="lbl_contact_msg">موضوع الرسالة أو الشراكة</label>
+            <textarea id="cnt-msg" rows="3" class="input-control" required data-i18n-placeholder="ph_contact_msg" placeholder="اكتب رسالتك هنا..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-emerald" data-i18n="btn_send_contact">إرسال الرسالة</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Unified Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong style="color:var(--gold);font-size:0.95rem;" data-i18n="site_name">أَثَـر DZ</strong>
+          <p style="margin-top:4px;" data-i18n="footer_desc">المنصة الوطنية الذكية للسياحة الثقافية، حجز الفعاليات، والصناعات الحرفية عبر 69 ولاية جزائرية.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+          <a href="about.html" data-i18n="nav_about">من نحن</a>
+          <a href="explore.html" data-i18n="nav_explore">المعالم والفعاليات</a>
+          <a href="passport.html" data-i18n="nav_passport">جواز السفر والألعاب</a>
+          <a href="marketplace.html" data-i18n="nav_marketplace">المتجر الحرفي</a>
+          <a href="login.html" data-i18n="btn_login_portal">تسجيل الدخول / حساب جديد</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global Interactive Modal -->
+  <div class="modal-overlay" id="global-modal" onclick="closeGlobalModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <span class="brand-tag" id="g-modal-badge">Athar DZ</span>
+      <h3 style="margin-top:10px;font-size:1.15rem;color:var(--charcoal);" id="g-modal-title"></h3>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:4px;" id="g-modal-sub"></p>
+      <div class="qr-box hidden" id="g-modal-qr"></div>
+      <div id="g-modal-extra"></div>
+      <button type="button" class="btn btn-emerald" style="width:100%;margin-top:16px;" onclick="closeGlobalModal()" data-i18n="modal_close">إغلاق</button>
+    </div>
+  </div>
+
+  <!-- Global Toast -->
+  <div class="toast-msg" id="global-toast"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  <script>
+    function submitAboutContact(e) {
+      e.preventDefault();
+      atharState.inquiries.unshift({
+        id: "MSG-" + Date.now(),
+        name: document.getElementById("cnt-name").value.trim(),
+        email: document.getElementById("cnt-email").value.trim(),
+        wilayaCode: document.getElementById("cnt-wilaya").value,
+        message: document.getElementById("cnt-msg").value.trim(),
+        createdAt: new Date().toISOString().split("T")[0]
+      });
+      saveAtharState(atharState);
+      e.target.reset();
+      showToast("toast_contact_sent");
+    }
+  </script>
+
+</body>
+</html>

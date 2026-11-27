@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أَثَـر DZ | المعالم والفعاليات وحجز التذاكر</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cinzel:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="explore">
+
+  <!-- Unified National Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="index.html" class="brand-link">
+          <img src="assets/images/logo.jpg" alt="Athar DZ Logo" class="brand-logo" />
+          <div>
+            <div class="brand-name-row">
+              <span data-i18n="site_name">أَثَـر DZ</span>
+              <span class="brand-tag">Athar DZ • 69</span>
+            </div>
+            <div class="brand-sub" data-i18n="site_slogan">زُر معالمك.. اجمع نقاطك.. واقتنِ أصالتك</div>
+          </div>
+        </a>
+
+        <div class="header-actions">
+          <div class="wallet-badge">
+            <span data-i18n="wallet_label">رصيدك الثقافي:</span>
+            <strong id="header-points">0</strong>
+            <strong data-i18n="pts_unit">نقطة</strong>
+          </div>
+
+          <div class="lang-switcher" role="group" aria-label="Language Switcher">
+            <button type="button" class="lang-btn active" data-lang="ar" onclick="setLanguage('ar')">العربية</button>
+            <button type="button" class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">Français</button>
+            <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')">English</button>
+          </div>
+
+          <a href="login.html" class="auth-pill">
+            <span>👤</span>
+            <span id="header-auth-label" data-i18n="btn_login_portal">تسجيل الدخول / حساب جديد</span>
+          </a>
+          <button type="button" id="header-logout-btn" class="btn btn-glass btn-sm hidden" onclick="globalLogout()" data-i18n="btn_logout">تسجيل الخروج</button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <div class="container">
+        <div class="nav-links">
+          <a href="index.html" class="nav-item" data-nav="home" data-i18n="nav_home">الرئيسية</a>
+          <a href="about.html" class="nav-item" data-nav="about" data-i18n="nav_about">من نحن</a>
+          <a href="explore.html" class="nav-item" data-nav="explore" data-i18n="nav_explore">المعالم والفعاليات</a>
+          <a href="passport.html" class="nav-item" data-nav="passport" data-i18n="nav_passport">جواز السفر والألعاب</a>
+          <a href="marketplace.html" class="nav-item" data-nav="marketplace" data-i18n="nav_marketplace">المتجر الحرفي</a>
+          <a href="visitor-dashboard.html" class="nav-item hidden" data-nav="visitor" data-i18n="nav_visitor">محفظتي وفضاء الزائر</a>
+          <a href="artisan-dashboard.html" class="nav-item hidden" data-nav="artisan" data-i18n="nav_artisan">لوحة الحرفيين والمنظمين</a>
+          <a href="admin-dashboard.html" class="nav-item hidden" data-nav="admin" data-i18n="nav_admin">الإدارة الوطنية</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="page-banner">
+      <div>
+        <h1 style="font-size:1.55rem;font-weight:800;margin-bottom:6px;" data-i18n="explore_banner_title">استكشاف المعالم الأثرية، المتاحف، والعروض الحية</h1>
+        <p style="font-size:0.9rem;color:#D1FAE5;" data-i18n="explore_banner_desc">اختر وجهتك الثقافية من 69 ولاية، حدد تاريخ الزيارة وعدد التذاكر، وشارك في لعبة الزيارة لربح النقاط.</p>
+      </div>
+    </section>
+
+    <div class="filter-toolbar">
+      <div class="chips-row" id="explore-chips">
+        <button type="button" class="chip active" onclick="setExploreCat('all', this)" data-i18n="filter_all">الكل</button>
+        <button type="button" class="chip" onclick="setExploreCat('heritage', this)" data-i18n="filter_heritage">معالم أثرية</button>
+        <button type="button" class="chip" onclick="setExploreCat('museum', this)" data-i18n="filter_museum">متاحف وقصور</button>
+        <button type="button" class="chip" onclick="setExploreCat('theater', this)" data-i18n="filter_theater">مسرح وعروض حية</button>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <select id="explore-wilaya-filter" class="select-control" data-wilaya-select="true" data-include-all="true" onchange="renderPageContent()"></select>
+        <input type="text" id="explore-search" class="input-control" oninput="renderPageContent()" data-i18n-placeholder="search_sites_placeholder" placeholder="ابحث عن معلم، مسرح، أو مدينة..." />
+      </div>
+    </div>
+
+    <div class="grid-2" id="explore-sites-grid"></div>
+
+  </main>
+
+  <!-- Unified Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong style="color:var(--gold);font-size:0.95rem;" data-i18n="site_name">أَثَـر DZ</strong>
+          <p style="margin-top:4px;" data-i18n="footer_desc">المنصة الوطنية الذكية للسياحة الثقافية، حجز الفعاليات، والصناعات الحرفية عبر 69 ولاية جزائرية.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+          <a href="about.html" data-i18n="nav_about">من نحن</a>
+          <a href="explore.html" data-i18n="nav_explore">المعالم والفعاليات</a>
+          <a href="passport.html" data-i18n="nav_passport">جواز السفر والألعاب</a>
+          <a href="marketplace.html" data-i18n="nav_marketplace">المتجر الحرفي</a>
+          <a href="login.html" data-i18n="btn_login_portal">تسجيل الدخول / حساب جديد</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global Interactive Modal -->
+  <div class="modal-overlay" id="global-modal" onclick="closeGlobalModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <span class="brand-tag" id="g-modal-badge">Athar DZ</span>
+      <h3 style="margin-top:10px;font-size:1.15rem;color:var(--charcoal);" id="g-modal-title"></h3>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:4px;" id="g-modal-sub"></p>
+      <div class="qr-box hidden" id="g-modal-qr"></div>
+      <div id="g-modal-extra"></div>
+      <button type="button" class="btn btn-emerald" style="width:100%;margin-top:16px;" onclick="closeGlobalModal()" data-i18n="modal_close">إغلاق</button>
+    </div>
+  </div>
+
+  <!-- Global Toast -->
+  <div class="toast-msg" id="global-toast"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  <script>
+    let selectedCat = "all";
+    function setExploreCat(cat, btn) {
+      selectedCat = cat;
+      document.querySelectorAll("#explore-chips .chip").forEach(c => c.classList.remove("active"));
+      btn.classList.add("active");
+      renderPageContent();
+    }
+
+    window.renderPageContent = function() {
+      const grid = document.getElementById("explore-sites-grid");
+      const wilayaFilter = document.getElementById("explore-wilaya-filter")?.value || "all";
+      const query = (document.getElementById("explore-search")?.value || "").trim().toLowerCase();
+
+      const list = atharState.sites.filter(s => {
+        const matchCat = selectedCat === "all" || s.cat === selectedCat;
+        const matchWilaya = wilayaFilter === "all" || s.wilayaCode === wilayaFilter;
+        const wName = getWilayaNameByCode(s.wilayaCode, atharState.lang);
+        const text = `${loc(s.title)} ${wName} ${loc(s.desc)}`.toLowerCase();
+        const matchQ = !query || text.includes(query);
+        return matchCat && matchWilaya && matchQ;
+      });
+
+      if (list.length === 0) {
+        grid.innerHTML = `<div class="panel" style="grid-column:1/-1;text-align:center;color:var(--muted);">${t("empty_filter_results")}</div>`;
+        return;
+      }
+      grid.innerHTML = list.map(site => {
+        const siteBookingsCount = atharState.bookings.filter(b => b.siteId === site.id).length;
+        return `
+          <article class="media-card">
+            <div class="card-img-wrap">
+              <img src="${site.image}" alt="${loc(site.title)}" />
+              <div class="card-top-badges">
+                <span class="badge-wilaya">${getWilayaNameByCode(site.wilayaCode, atharState.lang)}</span>
+                <span class="badge-pts">+${site.reward} ${t("pts_unit")}</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div>
+                <div class="card-cat">${loc(site.catLabel)}</div>
+                <h3 class="card-title">${loc(site.title)}</h3>
+                <div class="card-meta-line">${loc(site.schedule)} • ${site.id}</div>
+                <p class="card-desc">${loc(site.desc)}</p>
+              </div>
+              <div class="card-footer">
+                <span class="price-label">${site.price} ${t("currency_dzd")}</span>
+                <div class="btn-row">
+                  <button type="button" class="btn btn-emerald btn-sm" onclick="openBookingModal('${site.id}')">
+                    ${t("btn_book_qr")} ${siteBookingsCount > 0 ? `(${siteBookingsCount})` : ""}
+                  </button>
+                  <button type="button" class="btn btn-sm ${site.visited ? "btn-done" : "btn-gold"}" onclick="handleOpenVisitGame('${site.id}')" ${site.visited ? "disabled" : ""}>
+                    ${site.visited ? t("btn_visited_done") : t("btn_play_checkin")}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    };
+  </script>
+
+</body>
+</html>

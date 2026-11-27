@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أَثَـر DZ | Athar DZ — الصفحة الرئيسية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cinzel:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="home">
+
+  <!-- Unified National Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="index.html" class="brand-link">
+          <img src="assets/images/logo.jpg" alt="Athar DZ Logo" class="brand-logo" />
+          <div>
+            <div class="brand-name-row">
+              <span data-i18n="site_name">أَثَـر DZ</span>
+              <span class="brand-tag">Athar DZ • 69</span>
+            </div>
+            <div class="brand-sub" data-i18n="site_slogan">زُر معالمك.. اجمع نقاطك.. واقتنِ أصالتك</div>
+          </div>
+        </a>
+
+        <div class="header-actions">
+          <div class="wallet-badge">
+            <span data-i18n="wallet_label">رصيدك الثقافي:</span>
+            <strong id="header-points">0</strong>
+            <strong data-i18n="pts_unit">نقطة</strong>
+          </div>
+
+          <div class="lang-switcher" role="group" aria-label="Language Switcher">
+            <button type="button" class="lang-btn active" data-lang="ar" onclick="setLanguage('ar')">العربية</button>
+            <button type="button" class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">Français</button>
+            <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')">English</button>
+          </div>
+
+          <a href="login.html" class="auth-pill">
+            <span>👤</span>
+            <span id="header-auth-label" data-i18n="btn_login_portal">تسجيل الدخول / حساب جديد</span>
+          </a>
+          <button type="button" id="header-logout-btn" class="btn btn-glass btn-sm hidden" onclick="globalLogout()" data-i18n="btn_logout">تسجيل الخروج</button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <div class="container">
+        <div class="nav-links">
+          <a href="index.html" class="nav-item" data-nav="home" data-i18n="nav_home">الرئيسية</a>
+          <a href="about.html" class="nav-item" data-nav="about" data-i18n="nav_about">من نحن</a>
+          <a href="explore.html" class="nav-item" data-nav="explore" data-i18n="nav_explore">المعالم والفعاليات</a>
+          <a href="passport.html" class="nav-item" data-nav="passport" data-i18n="nav_passport">جواز السفر والألعاب</a>
+          <a href="marketplace.html" class="nav-item" data-nav="marketplace" data-i18n="nav_marketplace">المتجر الحرفي</a>
+          <a href="visitor-dashboard.html" class="nav-item hidden" data-nav="visitor" data-i18n="nav_visitor">محفظتي وفضاء الزائر</a>
+          <a href="artisan-dashboard.html" class="nav-item hidden" data-nav="artisan" data-i18n="nav_artisan">لوحة الحرفيين والمنظمين</a>
+          <a href="admin-dashboard.html" class="nav-item hidden" data-nav="admin" data-i18n="nav_admin">الإدارة الوطنية</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- National Hero -->
+    <section class="hero-national">
+      <div class="hero-content">
+        <span class="hero-eyebrow" data-i18n="hero_eyebrow">المنصة الوطنية للسياحة الثقافية والاقتصاد الإبداعي • 69 ولاية</span>
+        <h1 class="hero-title" data-i18n="hero_title">اكتشف كنوز الجزائر عبر 69 ولاية وحوّل كل زيارة ثقافية إلى مكافأة حرفية أصيلة</h1>
+        <p class="hero-desc" data-i18n="hero_desc">منصة وطنية ذكية تجمع حجز تذاكر المتاحف والمعالم الأثرية والعروض الحية، مع ألعاب تفاعلية وجواز سفر ثقافي رقمي يمكّنك من ربح نقاط واستبدالها بمنتجات حرفية جزائرية موثقة.</p>
+        <div class="hero-cta-row">
+          <a href="explore.html" class="btn btn-gold" data-i18n="hero_cta_explore">استكشف المعالم واحجز تذكرتك</a>
+          <a href="about.html" class="btn btn-glass" data-i18n="hero_cta_about">تعرّف على من نحن</a>
+          <a href="login.html" class="btn btn-terracotta" data-i18n="hero_cta_login">دخول الزوار والمحترفين</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/images/casbah.jpg" alt="Casbah of Algiers - Athar DZ" />
+        <div class="hero-visual-overlay">
+          <div class="hero-kpi-strip">
+            <div class="hero-kpi">
+              <strong data-i18n="kpi_wilayas_num">69 ولاية</strong>
+              <span data-i18n="kpi_wilayas_lbl">تغطية ثقافية وطنية</span>
+            </div>
+            <div class="hero-kpi">
+              <strong id="home-kpi-catalog-count">14</strong>
+              <span data-i18n="kpi_catalog_lbl">معلم وإبداع حرفي موثق</span>
+            </div>
+            <div class="hero-kpi">
+              <strong data-i18n="kpi_auth_num">100% QR</strong>
+              <span data-i18n="kpi_auth_lbl">شهادات أصالة موثقة</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section on Home Page -->
+    <section class="section-block">
+      <div class="about-split">
+        <div>
+          <h2 class="section-title" style="margin-bottom:8px;" data-i18n="home_about_title">من نحن — رؤية أَثَـر DZ</h2>
+          <p style="font-size:0.86rem;color:var(--terracotta);font-weight:700;margin-bottom:12px;" data-i18n="home_about_sub">جسر رقمي جزائري يربط السياحة الثقافية بالحرفيين والمبدعين عبر 69 ولاية</p>
+          <p style="font-size:0.9rem;color:var(--slate);margin-bottom:10px;" data-i18n="home_about_p1">أَثَـر DZ هي منصة رقمية وطنية متكاملة صُممت لإعادة إحياء التفاعل بين المواطن والسائح من جهة، والمعالم التاريخية والمتاحف والعروض الفنية والحرفيين من جهة أخرى عبر 69 ولاية جزائرية.</p>
+          <p style="font-size:0.9rem;color:var(--slate);margin-bottom:18px;" data-i18n="home_about_p2">نحوّل كل زيارة ثقافية إلى تجربة تفاعلية ممتعة تمنح الزائر أختاماً رقمية ونقاط مكافآت قابلة للاستبدال بمنتجات حرفية أصيلة موثقة بشهادات QR، مما يخلق دورة اقتصادية مستدامة تحمي الموروث وتدعم الحرفي المحلي.</p>
+          <a href="about.html" class="btn btn-emerald btn-sm" data-i18n="btn_read_more_about">اقرأ المزيد عن رؤيتنا ونموذج عملنا ←</a>
+        </div>
+        <div class="about-gallery">
+          <img src="assets/images/timgad.jpg" alt="Timgad Heritage" />
+          <img src="assets/images/karakou.jpg" alt="Algerian Karakou" />
+          <img src="assets/images/mechouar.jpg" alt="El Mechouar Tlemcen" />
+          <img src="assets/images/jewelry.jpg" alt="Beni Yenni Jewelry" />
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section-block">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" data-i18n="how_title">كيف تعمل منصة أَثَـر DZ في 3 خطوات بسيطة؟</h2>
+          <p class="section-sub" data-i18n="how_sub">تجربة سلسة تربط السائح والمواطن بالفضاءات الثقافية والحرفيين المحليين</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3 data-i18n="step1_title">1. اختر معلمك واحجز تذكرتك</h3>
+          <p data-i18n="step1_desc">تصفح المتاحف، القصور التاريخية، والمسارح في أي من الولايات الـ 69، اختر التاريخ وعدد التذاكر واحصل على تذكرة QR فورية.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3 data-i18n="step2_title">2. العب وأكّد زيارتك الميدانية</h3>
+          <p data-i18n="step2_desc">عند الوصول إلى المعلم، امسح رمز QR أو أجب عن لغز الزيارة التفاعلي لفتح ختم جديد في جواز سفرك الثقافي.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3 data-i18n="step3_title">3. استبدل نقاطك بهدايا حرفية</h3>
+          <p data-i18n="step3_desc">استخدم نقاطك المكتسبة للحصول على خصومات وهدايا من إبداع الحرفيين الجزائريين بشهادة أصالة رقمية.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Sites -->
+    <section class="section-block">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" data-i18n="home_featured_sites_title">معالم وفعاليات ثقافية مختارة</h2>
+          <p class="section-sub" data-i18n="home_featured_sites_sub">احجز تذكرتك الآن بالتاريخ والوقت المناسبين واجمع نقاطاً عند الزيارة</p>
+        </div>
+        <a href="explore.html" class="btn btn-outline btn-sm" data-i18n="btn_view_all_sites">عرض كل المعالم والفعاليات ←</a>
+      </div>
+      <div class="grid-2" id="home-sites-grid"></div>
+    </section>
+
+    <!-- Featured Artisan Crafts -->
+    <section class="section-block">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" data-i18n="home_featured_crafts_title">إبداعات حرفية أصيلة موثقة</h2>
+          <p class="section-sub" data-i18n="home_featured_crafts_sub">كل منتج يحمل رمز QR يروي قصته ويوثق صانعه ومنطقته</p>
+        </div>
+        <a href="marketplace.html" class="btn btn-outline btn-sm" data-i18n="btn_view_all_crafts">تصفح المتجر الحرفي ←</a>
+      </div>
+      <div class="grid-2" id="home-crafts-grid"></div>
+    </section>
+
+    <!-- National Ecosystem Portals -->
+    <section class="section-block">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" data-i18n="portals_title">بوابات المنظومة الوطنية (للمواطنين، الحرفيين، والإدارة)</h2>
+          <p class="section-sub" data-i18n="portals_sub">صُممت منصة أَثَـر DZ لتخدم جميع أطراف الصناعات الثقافية والإبداعية في الجزائر</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="step-card" style="border-top-color:var(--emerald);">
+          <h3 data-i18n="portal1_title">فضاء الزائر والسائح</h3>
+          <p style="margin-bottom:16px;" data-i18n="portal1_desc">حجز التذاكر الرقمية، جواز السفر الثقافي، ألعاب الاكتشاف، واستبدال النقاط بالهدايا الحرفية.</p>
+          <a href="login.html?role=visitor" id="portal-link-visitor" class="btn btn-emerald btn-sm" data-i18n="portal1_btn_login">تسجيل الدخول كزائر</a>
+        </div>
+        <div class="step-card" style="border-top-color:var(--terracotta);">
+          <h3 data-i18n="portal2_title">لوحة الحرفيين ومنظمي الفعاليات (B2B)</h3>
+          <p style="margin-bottom:16px;" data-i18n="portal2_desc">نظام تسيير رقمي لإدارة المبيعات، نشر الفعاليات، وإصدار شهادات أصالة QR فورية للمنتجات.</p>
+          <a href="login.html?role=artisan" id="portal-link-artisan" class="btn btn-terracotta btn-sm" data-i18n="portal2_btn_login">اشتراك ودخول الحرفيين</a>
+        </div>
+        <div class="step-card" style="border-top-color:var(--gold);">
+          <h3 data-i18n="portal3_title">لوحة الإدارة الوطنية والرقابة</h3>
+          <p style="margin-bottom:16px;" data-i18n="portal3_desc">مؤشرات التدفق الثقافي عبر 69 ولاية، اعتماد الورشات الحرفية، ومتابعة الأثر الاقتصادي.</p>
+          <a href="login.html?role=admin" id="portal-link-admin" class="btn btn-gold btn-sm" data-i18n="portal3_btn_login">دخول الإدارة المعتمدة</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Unified Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong style="color:var(--gold);font-size:0.95rem;" data-i18n="site_name">أَثَـر DZ</strong>
+          <p style="margin-top:4px;" data-i18n="footer_desc">المنصة الوطنية الذكية للسياحة الثقافية، حجز الفعاليات، والصناعات الحرفية عبر 69 ولاية جزائرية.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+          <a href="about.html" data-i18n="nav_about">من نحن</a>
+          <a href="explore.html" data-i18n="nav_explore">المعالم والفعاليات</a>
+          <a href="passport.html" data-i18n="nav_passport">جواز السفر والألعاب</a>
+          <a href="marketplace.html" data-i18n="nav_marketplace">المتجر الحرفي</a>
+          <a href="login.html" data-i18n="btn_login_portal">تسجيل الدخول / حساب جديد</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global Interactive Modal -->
+  <div class="modal-overlay" id="global-modal" onclick="closeGlobalModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <span class="brand-tag" id="g-modal-badge">Athar DZ</span>
+      <h3 style="margin-top:10px;font-size:1.15rem;color:var(--charcoal);" id="g-modal-title"></h3>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:4px;" id="g-modal-sub"></p>
+      <div class="qr-box hidden" id="g-modal-qr"></div>
+      <div id="g-modal-extra"></div>
+      <button type="button" class="btn btn-emerald" style="width:100%;margin-top:16px;" onclick="closeGlobalModal()" data-i18n="modal_close">إغلاق</button>
+    </div>
+  </div>
+
+  <!-- Global Toast -->
+  <div class="toast-msg" id="global-toast"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  <script>
+    window.renderPageContent = function() {
+      const catCountEl = document.getElementById("home-kpi-catalog-count");
+      if (catCountEl) {
+        catCountEl.textContent = (atharState.sites?.length || 0) + (atharState.products?.length || 0);
+      }
+      const u = atharState.user || { loggedIn: false };
+      const pVis = document.getElementById("portal-link-visitor");
+      const pArt = document.getElementById("portal-link-artisan");
+      const pAdm = document.getElementById("portal-link-admin");
+      if (pVis) {
+        pVis.href = (u.loggedIn && u.role === "visitor") ? "visitor-dashboard.html" : "login.html?role=visitor";
+        pVis.textContent = (u.loggedIn && u.role === "visitor") ? t("portal1_btn") : t("portal1_btn_login");
+      }
+      if (pArt) {
+        pArt.href = (u.loggedIn && u.role === "artisan" && u.subscribed) ? "artisan-dashboard.html" : "login.html?role=artisan";
+        pArt.textContent = (u.loggedIn && u.role === "artisan" && u.subscribed) ? t("portal2_btn") : t("portal2_btn_login");
+      }
+      if (pAdm) {
+        pAdm.href = (u.loggedIn && u.role === "admin") ? "admin-dashboard.html" : "login.html?role=admin";
+        pAdm.textContent = (u.loggedIn && u.role === "admin") ? t("portal3_btn") : t("portal3_btn_login");
+      }
+      const sitesGrid = document.getElementById("home-sites-grid");
+      if (sitesGrid) {
+        sitesGrid.innerHTML = atharState.sites.slice(0, 2).map(site => `
+          <article class="media-card">
+            <div class="card-img-wrap">
+              <img src="${site.image}" alt="${loc(site.title)}" />
+              <div class="card-top-badges">
+                <span class="badge-wilaya">${getWilayaNameByCode(site.wilayaCode, atharState.lang)}</span>
+                <span class="badge-pts">+${site.reward} ${t("pts_unit")}</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div>
+                <div class="card-cat">${loc(site.catLabel)}</div>
+                <h3 class="card-title">${loc(site.title)}</h3>
+                <p class="card-desc">${loc(site.desc)}</p>
+              </div>
+              <div class="card-footer">
+                <span class="price-label">${site.price} ${t("currency_dzd")}</span>
+                <div class="btn-row">
+                  <button type="button" class="btn btn-emerald btn-sm" onclick="openBookingModal('${site.id}')">
+                    ${t("btn_book_qr")}
+                  </button>
+                  <button type="button" class="btn btn-sm ${site.visited ? "btn-done" : "btn-gold"}" onclick="handleOpenVisitGame('${site.id}')" ${site.visited ? "disabled" : ""}>
+                    ${site.visited ? t("btn_visited_done") : t("btn_play_checkin")}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        `).join("");
+      }
+
+      const craftsGrid = document.getElementById("home-crafts-grid");
+      if (craftsGrid) {
+        craftsGrid.innerHTML = atharState.products.slice(0, 2).map(prod => `
+          <article class="media-card">
+            <div class="card-img-wrap">
+              <img src="${prod.image}" alt="${loc(prod.name)}" />
+              <div class="card-top-badges">
+                <span class="badge-wilaya">${getWilayaNameByCode(prod.wilayaCode, atharState.lang)}</span>
+                <span class="badge-pts">${prod.pointsCost} ${t("pts_unit")}</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div>
+                <div class="card-cat">${loc(prod.artisan)}</div>
+                <h3 class="card-title">${loc(prod.name)}</h3>
+                <p class="card-desc">${loc(prod.desc)}</p>
+              </div>
+              <div class="card-footer">
+                <span class="price-label">${prod.price} ${t("currency_dzd")}</span>
+                <div class="btn-row">
+                  <button type="button" class="btn btn-outline btn-sm" onclick="handleOpenCertificate('${prod.id}')">${t("btn_cert_qr")}</button>
+                  <button type="button" class="btn btn-terracotta btn-sm" onclick="openCraftOrderModal('${prod.id}')">${t("btn_buy_craft")}</button>
+                  <button type="button" class="btn btn-gold btn-sm" onclick="handleRedeemProduct('${prod.id}')">${t("btn_redeem_pts")}</button>
+                </div>
+              </div>
+            </div>
+          </article>
+        `).join("");
+      }
+    };
+  </script>
+
+</body>
+</html>

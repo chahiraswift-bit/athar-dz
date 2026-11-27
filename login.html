@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أَثَـر DZ | تسجيل الدخول وإنشاء حساب</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cinzel:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="login">
+
+  <!-- Unified National Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="index.html" class="brand-link">
+          <img src="assets/images/logo.jpg" alt="Athar DZ Logo" class="brand-logo" />
+          <div>
+            <div class="brand-name-row">
+              <span data-i18n="site_name">أَثَـر DZ</span>
+              <span class="brand-tag">Athar DZ • 69</span>
+            </div>
+            <div class="brand-sub" data-i18n="site_slogan">زُر معالمك.. اجمع نقاطك.. واقتنِ أصالتك</div>
+          </div>
+        </a>
+
+        <div class="header-actions">
+          <div class="wallet-badge">
+            <span data-i18n="wallet_label">رصيدك الثقافي:</span>
+            <strong id="header-points">0</strong>
+            <strong data-i18n="pts_unit">نقطة</strong>
+          </div>
+
+          <div class="lang-switcher" role="group" aria-label="Language Switcher">
+            <button type="button" class="lang-btn active" data-lang="ar" onclick="setLanguage('ar')">العربية</button>
+            <button type="button" class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">Français</button>
+            <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')">English</button>
+          </div>
+
+          <a href="login.html" class="auth-pill">
+            <span>👤</span>
+            <span id="header-auth-label" data-i18n="btn_login_portal">تسجيل الدخول / حساب جديد</span>
+          </a>
+          <button type="button" id="header-logout-btn" class="btn btn-glass btn-sm hidden" onclick="globalLogout()" data-i18n="btn_logout">تسجيل الخروج</button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <div class="container">
+        <div class="nav-links">
+          <a href="index.html" class="nav-item" data-nav="home" data-i18n="nav_home">الرئيسية</a>
+          <a href="about.html" class="nav-item" data-nav="about" data-i18n="nav_about">من نحن</a>
+          <a href="explore.html" class="nav-item" data-nav="explore" data-i18n="nav_explore">المعالم والفعاليات</a>
+          <a href="passport.html" class="nav-item" data-nav="passport" data-i18n="nav_passport">جواز السفر والألعاب</a>
+          <a href="marketplace.html" class="nav-item" data-nav="marketplace" data-i18n="nav_marketplace">المتجر الحرفي</a>
+          <a href="visitor-dashboard.html" class="nav-item hidden" data-nav="visitor" data-i18n="nav_visitor">محفظتي وفضاء الزائر</a>
+          <a href="artisan-dashboard.html" class="nav-item hidden" data-nav="artisan" data-i18n="nav_artisan">لوحة الحرفيين والمنظمين</a>
+          <a href="admin-dashboard.html" class="nav-item hidden" data-nav="admin" data-i18n="nav_admin">الإدارة الوطنية</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <div class="auth-wrapper">
+      <div style="text-align:center;">
+        <img src="assets/images/logo.jpg" alt="Athar DZ" style="width:68px;height:68px;border-radius:16px;margin:0 auto 12px;border:2px solid var(--gold);" />
+        <h1 style="font-size:1.35rem;font-weight:800;color:var(--emerald);" data-i18n="login_title">بوابة الدخول والتسجيل — أَثَـر DZ</h1>
+        <p style="font-size:0.84rem;color:var(--muted);margin-top:4px;" data-i18n="login_sub">سجّل دخولك أو أنشئ حسابك الجديد كزائر، حرفي، أو منظم فعاليات عبر 69 ولاية</p>
+      </div>
+
+      <div id="access-guard-banner" class="hidden" style="background:var(--terracotta-light);border:1.5px solid var(--terracotta);color:var(--terracotta);border-radius:12px;padding:11px 14px;margin:14px 0;font-size:0.82rem;font-weight:700;text-align:start;" data-i18n="access_guard_notice">
+        تنبيه: هذه اللوحة محمية وتتطلب تسجيل الدخول أو تفعيل الاشتراك المهني أولاً.
+      </div>
+
+      <div id="active-session-box" class="hidden" style="background:var(--emerald-light);border:1.5px solid var(--emerald);border-radius:14px;padding:14px;margin:16px 0;text-align:center;">
+        <p style="font-weight:800;color:var(--emerald);margin-bottom:8px;" id="active-session-name"></p>
+        <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+          <button type="button" class="btn btn-emerald btn-sm" onclick="goToRoleDashboard()" data-i18n="btn_submit_login">دخول إلى المنصة</button>
+          <button type="button" class="btn btn-terracotta btn-sm" onclick="globalLogout()" data-i18n="btn_logout">تسجيل الخروج</button>
+        </div>
+      </div>
+
+      <div class="auth-mode-tabs">
+        <button type="button" class="auth-mode-tab active" id="mode-signin-btn" onclick="switchAuthMode('signin')" data-i18n="tab_signin">تسجيل الدخول</button>
+        <button type="button" class="auth-mode-tab" id="mode-register-btn" onclick="switchAuthMode('register')" data-i18n="tab_register">إنشاء حساب جديد</button>
+      </div>
+
+      <div class="role-tabs">
+        <button type="button" class="role-tab active" data-role="visitor" onclick="selectAuthRole('visitor', this)" data-i18n="role_tab_visitor">زائر / سائح</button>
+        <button type="button" class="role-tab" data-role="artisan" onclick="selectAuthRole('artisan', this)" data-i18n="role_tab_artisan">حرفي / منظم فعاليات</button>
+        <button type="button" class="role-tab" data-role="admin" onclick="selectAuthRole('admin', this)" data-i18n="role_tab_admin">إدارة وطنية</button>
+      </div>
+
+      <form onsubmit="handleAuthSubmit(event)">
+        <div class="form-field" id="field-fullname">
+          <label data-i18n="lbl_fullname">الاسم الكامل / اسم الورشة أو المؤسسة</label>
+          <input type="text" id="auth-name" class="input-control" data-i18n-placeholder="ph_fullname" placeholder="أدخل الاسم الكامل" />
+        </div>
+        <div class="form-field">
+          <label data-i18n="lbl_email">البريد الإلكتروني</label>
+          <input type="email" id="auth-email" class="input-control" required data-i18n-placeholder="ph_email" placeholder="name@athar.dz" />
+        </div>
+        <div class="form-field" id="field-phone">
+          <label data-i18n="lbl_phone">رقم الهاتف</label>
+          <input type="tel" id="auth-phone" class="input-control" data-i18n-placeholder="ph_phone" placeholder="0550 00 00 00" />
+        </div>
+        <div class="form-field" id="field-wilaya">
+          <label data-i18n="lbl_wilaya">الولاية (من 01 إلى 69)</label>
+          <select id="auth-wilaya" class="select-control" data-wilaya-select="true"></select>
+        </div>
+        <div class="form-field hidden" id="field-sub-plan">
+          <label data-i18n="lbl_sub_plan">اختر باقة الاشتراك المهني (SaaS)</label>
+          <select id="auth-plan" class="select-control" style="width:100%;">
+            <option value="starter" data-i18n="plan_starter_opt">الباقة الأساسية — 2,500 دج / شهر</option>
+            <option value="pro" selected data-i18n="plan_pro_opt">باقة برو للمحترفين — 5,900 دج / شهر</option>
+            <option value="enterprise" data-i18n="plan_enterprise_opt">باقة المؤسسات الكبرى — 12,000 دج / شهر</option>
+          </select>
+        </div>
+        <div class="form-field hidden" id="field-admin-code">
+          <label data-i18n="lbl_admin_code">رمز التفويض الإداري الوطني</label>
+          <input type="password" id="auth-admin-code" class="input-control" data-i18n-placeholder="ph_admin_code" placeholder="ATHAR-ADMIN-2026" />
+        </div>
+        <div class="form-field">
+          <label data-i18n="lbl_password">كلمة المرور</label>
+          <input type="password" id="auth-pass" class="input-control" required data-i18n-placeholder="ph_password" placeholder="••••••••" />
+        </div>
+        <button type="submit" class="btn btn-emerald" style="width:100%;margin-top:6px;" id="auth-submit-btn" data-i18n="btn_submit_login">دخول إلى المنصة</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Unified Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong style="color:var(--gold);font-size:0.95rem;" data-i18n="site_name">أَثَـر DZ</strong>
+          <p style="margin-top:4px;" data-i18n="footer_desc">المنصة الوطنية الذكية للسياحة الثقافية، حجز الفعاليات، والصناعات الحرفية عبر 69 ولاية جزائرية.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+          <a href="about.html" data-i18n="nav_about">من نحن</a>
+          <a href="explore.html" data-i18n="nav_explore">المعالم والفعاليات</a>
+          <a href="passport.html" data-i18n="nav_passport">جواز السفر والألعاب</a>
+          <a href="marketplace.html" data-i18n="nav_marketplace">المتجر الحرفي</a>
+          <a href="login.html" data-i18n="btn_login_portal">تسجيل الدخول / حساب جديد</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global Interactive Modal -->
+  <div class="modal-overlay" id="global-modal" onclick="closeGlobalModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <span class="brand-tag" id="g-modal-badge">Athar DZ</span>
+      <h3 style="margin-top:10px;font-size:1.15rem;color:var(--charcoal);" id="g-modal-title"></h3>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:4px;" id="g-modal-sub"></p>
+      <div class="qr-box hidden" id="g-modal-qr"></div>
+      <div id="g-modal-extra"></div>
+      <button type="button" class="btn btn-emerald" style="width:100%;margin-top:16px;" onclick="closeGlobalModal()" data-i18n="modal_close">إغلاق</button>
+    </div>
+  </div>
+
+  <!-- Global Toast -->
+  <div class="toast-msg" id="global-toast"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramRole = urlParams.get("role");
+    const paramRequired = urlParams.get("required");
+
+    let authMode = paramRole === "artisan" ? "register" : "signin";
+    let authRole = ["visitor", "artisan", "admin"].includes(paramRole) ? paramRole : "visitor";
+
+    function updateAuthFieldsVisibility() {
+      if (authRole === "admin") {
+        authMode = "signin";
+      }
+      const isReg = authMode === "register";
+      document.getElementById("mode-signin-btn").classList.toggle("active", !isReg);
+      document.getElementById("mode-register-btn").classList.toggle("active", isReg);
+      document.getElementById("mode-register-btn").classList.toggle("hidden", authRole === "admin");
+
+      document.getElementById("field-phone").classList.toggle("hidden", !isReg || authRole === "admin");
+      document.getElementById("field-wilaya").classList.toggle("hidden", !isReg || authRole === "admin");
+      document.getElementById("field-sub-plan").classList.toggle("hidden", !(isReg && authRole === "artisan"));
+      document.getElementById("field-admin-code").classList.toggle("hidden", authRole !== "admin");
+
+      document.querySelectorAll(".role-tab").forEach(b => {
+        b.classList.toggle("active", b.dataset.role === authRole);
+      });
+
+      document.getElementById("auth-submit-btn").textContent = isReg ? t("btn_submit_register") : t("btn_submit_login");
+    }
+
+    function switchAuthMode(mode) {
+      authMode = mode;
+      updateAuthFieldsVisibility();
+    }
+
+    function selectAuthRole(role, btn) {
+      authRole = role;
+      if (role === "artisan") {
+        authMode = "register";
+      } else if (role === "admin") {
+        authMode = "signin";
+      }
+      updateAuthFieldsVisibility();
+    }
+
+    function goToRoleDashboard() {
+      const role = atharState.user?.role || authRole;
+      if (role === "artisan") window.location.href = "artisan-dashboard.html";
+      else if (role === "admin") window.location.href = "admin-dashboard.html";
+      else window.location.href = "visitor-dashboard.html";
+    }
+
+    function handleAuthSubmit(e) {
+      e.preventDefault();
+      const emailVal = document.getElementById("auth-email").value.trim();
+      const nameInput = document.getElementById("auth-name").value.trim();
+      const phoneVal = document.getElementById("auth-phone")?.value.trim() || "";
+      const wilayaVal = document.getElementById("auth-wilaya")?.value || "16";
+      const planVal = document.getElementById("auth-plan")?.value || "pro";
+
+      if (authRole === "admin") {
+        const adminCode = document.getElementById("auth-admin-code")?.value.trim();
+        if (adminCode !== "ATHAR-ADMIN-2026") {
+          showToast("toast_invalid_admin_code");
+          return;
+        }
+      }
+
+      const isSubscribed = authRole === "artisan";
+
+      if (authMode === "register") {
+        const finalName = nameInput || emailVal.split("@")[0];
+        const newAccount = {
+          name: finalName,
+          email: emailVal,
+          phone: phoneVal,
+          wilayaCode: wilayaVal,
+          role: authRole,
+          subscribed: isSubscribed,
+          plan: planVal
+        };
+        atharState.accounts = atharState.accounts.filter(a => a.email !== emailVal);
+        atharState.accounts.push(newAccount);
+        if (authRole === "artisan") {
+          atharState.approvals = atharState.approvals || [];
+          atharState.approvals.unshift({
+            id: "REQ-" + Math.floor(100000 + Math.random() * 900000),
+            entity: { ar: finalName, fr: finalName, en: finalName },
+            type: { ar: "حرفي / منظم فعاليات", fr: "Artisan / Organisateur", en: "Artisan / Organizer" },
+            wilayaCode: wilayaVal,
+            status: "pending"
+          });
+        }
+        atharState.user = { loggedIn: true, ...newAccount };
+        saveAtharState(atharState);
+        showToast("toast_registered");
+        setTimeout(() => goToRoleDashboard(), 500);
+      } else {
+        const existing = atharState.accounts.find(a => a.email === emailVal);
+        const resolvedName = nameInput || (existing && existing.name) || emailVal.split("@")[0];
+        atharState.user = {
+          loggedIn: true,
+          role: authRole,
+          subscribed: isSubscribed,
+          plan: (existing && existing.plan) || planVal,
+          name: resolvedName,
+          email: emailVal,
+          phone: (existing && existing.phone) || "",
+          wilayaCode: (existing && existing.wilayaCode) || "16"
+        };
+        saveAtharState(atharState);
+        showToast("toast_logged_in");
+        setTimeout(() => goToRoleDashboard(), 450);
+      }
+    }
+
+    window.renderPageContent = function() {
+      updateAuthFieldsVisibility();
+      const guardBanner = document.getElementById("access-guard-banner");
+      if (guardBanner) {
+        guardBanner.classList.toggle("hidden", paramRequired !== "1");
+      }
+
+      const box = document.getElementById("active-session-box");
+      if (atharState.user && atharState.user.loggedIn && atharState.user.name) {
+        box.classList.remove("hidden");
+        document.getElementById("active-session-name").textContent = `${atharState.user.name} — ${atharState.user.email}`;
+      } else {
+        box.classList.add("hidden");
+      }
+    };
+  </script>
+</body>
+</html>
